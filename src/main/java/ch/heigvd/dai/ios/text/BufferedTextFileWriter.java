@@ -18,7 +18,9 @@ public class BufferedTextFileWriter implements Writable {
       for (int i = 0; i < sizeInBytes; i++) {
         bw.write(i);
       }
+      bw.flush();
       writer.close();
+      bw.close();
     } catch (IOException e) {
       System.out.println("Exception: " + e);
     }
